@@ -20,4 +20,4 @@ jobs:
       - name: Install Dependencies
         run: npm cli
       - name: Build project
-        npm: run build
+        run: npm run build
