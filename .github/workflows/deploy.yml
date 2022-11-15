@@ -2,7 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - main
+      - Section_9_Building_and_Using_Custom_Actions
 jobs:
   lint:
     runs-on: ubuntu-latest
