@@ -1,13 +1,13 @@
 name: 'Get & Cache Dependencies'
-description: 'Get the dependencies (via npm) and cache them'
+description: 'Get the dependencies (via npm) and cache them.'
 inputs:
   caching:
-    description: 'Where to cache dependencies or not'
+    description: 'Whether to cache dependencies or not.'
     required: false
     default: 'true'
 outputs:
   used-cache:
-    description: "Whether the cache was used"
+    description: 'Whether the cache was used.'
     value: ${{ steps.install.outputs.cache }}
 runs:
   using: 'composite'
@@ -24,5 +24,5 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
       run: |
         npm ci
-        echo "cache=${{ inputs.caching }}" >> $GITHUB_OUTPUT
+        echo "::set-output name=cache::'${{ inputs.caching }}'"
       shell: bash
